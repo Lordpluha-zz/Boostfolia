@@ -1,0 +1,24 @@
+@mixin adaptive-value ($property, $startSize, $minSize, $type) {
+	$addSize: $startSize - $minSize;
+	// Меньше контейнера
+	@if $type == 1 {
+		// Присваивание свойству минимальной величины
+		#{$property}: $startSize + px;
+
+		// Когда размер страницы меньше контентного блока (узкие Планшеты и телефоны)
+		@media (max-width: #{$ContentMaxWidth + px}) {
+
+			// Свойство = МинВелич + ДобавРазмер * Отступы_от_Content / Максимальное_изменение_Content
+			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$ContentMinWidth+px}) / #{$ContentMaxWidth - $ContentMinWidth}));
+		}
+	// Если больше контейнера
+	} @else if $type == 2 {
+		#{$property}: $startSize + px;
+		@media (min-width: #{$ContentMaxWidth + px}) {
+			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$ContentMinWidth}px) / #{$SiteMaxWidth - $ContentMinWidth}));
+		}
+	// Всегда
+	} @else if $type == 3 {
+		#{$property}: calc(#{$SiteMaxWidth + px} + #{$addSize} * ((100vw - #{$ContentMinWidth}px) / #{$SiteMaxWidth - #{$ContentMinWidth}} ) );
+	}
+}

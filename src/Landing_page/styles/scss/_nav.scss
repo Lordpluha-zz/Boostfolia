@@ -1,0 +1,49 @@
+nav {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: block;
+	background-color: #f8f6f6;
+	z-index: 2;
+
+	#content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		align-content: center;
+
+		padding: 30px;
+		@include adaptive-value('padding-top', 20, 10, 1);
+		@include adaptive-value('padding-top', 40, 20, 2);
+
+		@include adaptive-value('padding-bottom', 20, 10, 1);
+		@include adaptive-value('padding-bottom', 40, 20, 2);
+
+		.nav__brand {
+			height: 100%;
+			display: flex;
+			justify-content: space-between;
+			flex: .05 1 25%;
+
+			.nav__logo {
+				max-width: 100%;
+
+			}
+
+			.nav__title {
+				@include adaptive-value('font-size', 40, 30, 1);
+				@include adaptive-value('font-size', 60, 40, 2);
+			}
+		}
+
+		.nav__burger {
+			flex: 0 0 auto;
+			
+			img {
+				max-width: 100%;
+			}
+		}
+
+	}
+}

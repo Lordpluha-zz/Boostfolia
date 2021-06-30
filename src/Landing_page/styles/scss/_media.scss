@@ -1,0 +1,64 @@
+/* Большие экраны ----------- */
+@media only screen and (min-width: 1824px) {
+
+	
+}
+
+@for $i from 1824 through 5000 {
+	@media only screen and (min-width: 1824px) and (max-width: #{$i}px) {
+		$coof: calc($i - 1824); 
+		$CMW: $ContentMaxWidth;
+
+		$ContentMaxWidth: $CMW + $coof;
+	}
+}
+
+/* Настольные компьютеры и ноутбуки ----------- */
+@media only screen  and (min-width: 1280px) {
+/* стили */
+}
+
+/* Планшеты (вертикальная и горизонтальная) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1075px) {
+/* стили */
+}
+
+/* Планшеты (горизонтальная) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+/* стили */
+}
+/* Планшеты (вертикальная) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+/* стили */
+}
+
+/* Smartphones (вертикальная и горизонтальная ориентация) ----------- */
+@media only screen and (min-width: #{$ContentMinWidth}px) and (max-width: 736px) {
+/* стили */
+}
+@media only screen and (min-width: #{$ContentMinWidth}px) and (max-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2){
+/* стили */
+}
+@media only screen and (min-width: #{$ContentMinWidth}px) and (max-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2){
+/* стили */
+}
+
+/** <--------------------------------------------------------------------> **/
+@media only screen and (max-width: 1075px) {
+	header .header__slider .slider__ctrl .slider__ctrl_to_slide,
+	header .header__slider .slider__ctrl .slider__slideto_down {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 736px) {
+	nav {
+		#content {
+			.nav__brand {
+				h1.nav__title {
+					display: none;
+				}
+			}
+		}
+	}
+}

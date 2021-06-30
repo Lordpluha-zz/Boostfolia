@@ -1,0 +1,39 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	border: none;
+	outline: none;
+	background-color: rgba(0, 0, 0, 0);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    list-style-type: none;
+    @include adaptive-value('font-size', 20, 10, 1);
+    @include adaptive-value('font-size', 30, 20, 2);
+	font-weight: 100;
+	line-height: 100%;
+}
+a, button, input, textarea, form {
+	color: #000;
+	text-decoration: none;
+	border: 1px solid #000;
+	&:hover {
+		cursor: pointer;
+	}
+}
+span {
+	font-size: 100%;
+}
+img {
+	// Не поддерживаеться Internet Explorer
+	max-width: 100%;
+	object-fit: cover;
+	object-position: center;
+}

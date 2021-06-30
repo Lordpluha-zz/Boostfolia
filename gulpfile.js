@@ -107,7 +107,7 @@ const rl = readline.createInterface({
 */
 
 // Параметры
-var Project_name 	= 'WebAgency',
+var Project_name 	= 'Boostfolia',
 	pages 			= ['Landing_page'],
 
 	// Текущая дирректория для работы
@@ -147,10 +147,9 @@ var Project_name 	= 'WebAgency',
 		index_filename 		= 'index.html',
 
 	git_ignr_files = [
-		'.gitignore',
 		'node_modules/*',
 		'package-lock.json',
-		'.zip'
+		'*.zip'
 	]
 
 // Макетная файловая архитектура
