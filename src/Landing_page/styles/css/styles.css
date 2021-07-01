@@ -1,4 +1,9 @@
 @charset 'UTF-8';
+html
+{
+    scroll-behavior: smooth;
+}
+
 *
 {
     font-size: 20px;
@@ -123,7 +128,7 @@ body.lock
 nav
 {
     position: fixed;
-    z-index: 2; 
+    z-index: 22; 
     top: 0;
     left: 0;
 
@@ -139,11 +144,7 @@ nav #content
     display: -ms-flexbox;
     display: flex;
 
-    padding: 30px;
-    padding-top: 20px;
-    padding-top: 40px;
-    padding-bottom: 20px;
-    padding-bottom: 40px; 
+    padding: 30px; 
 
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
@@ -153,34 +154,6 @@ nav #content
     align-items: center;
     -ms-flex-line-pack: center;
     align-content: center;
-}
-@media (max-width: 1004px)
-{
-    nav #content
-    {
-        padding-top: calc(10px + 10 * ((100vw - 320px) / 684));
-    }
-}
-@media (min-width: 1004px)
-{
-    nav #content
-    {
-        padding-top: calc(20px + 20 * ((100vw - 320px) / 1600));
-    }
-}
-@media (max-width: 1004px)
-{
-    nav #content
-    {
-        padding-bottom: calc(10px + 10 * ((100vw - 320px) / 684));
-    }
-}
-@media (min-width: 1004px)
-{
-    nav #content
-    {
-        padding-bottom: calc(20px + 20 * ((100vw - 320px) / 1600));
-    }
 }
 nav #content .nav__brand
 {
@@ -412,7 +385,261 @@ header .header__slider .slider__ctrl .slider__ctrl_to_slide button.right
 
 article
 {
+    position: relative;
     z-index: 3;
+
+    display: block;
+
+    width: 100%;
+    margin-top: 100Vh;
+
+    background-color: #fff;
+}
+article #content
+{
+    padding-top: 95px;
+    padding-top: 120px;
+    padding-bottom: 119px;
+    padding-bottom: 138px;
+}
+@media (max-width: 1004px)
+{
+    article #content
+    {
+        padding-top: calc(50px + 45 * ((100vw - 320px) / 684));
+    }
+}
+@media (min-width: 1004px)
+{
+    article #content
+    {
+        padding-top: calc(95px + 25 * ((100vw - 320px) / 1600));
+    }
+}
+@media (max-width: 1004px)
+{
+    article #content
+    {
+        padding-bottom: calc(90px + 29 * ((100vw - 320px) / 684));
+    }
+}
+@media (min-width: 1004px)
+{
+    article #content
+    {
+        padding-bottom: calc(119px + 19 * ((100vw - 320px) / 1600));
+    }
+}
+article #content h1
+{
+    font-size: 48px;
+    font-size: 56px; 
+
+    position: relative;
+
+    display: block;
+
+    margin: 0 auto;
+
+    text-align: center;
+    text-transform: uppercase;
+}
+@media (max-width: 1004px)
+{
+    article #content h1
+    {
+        font-size: calc(36px + 12 * ((100vw - 320px) / 684));
+    }
+}
+@media (min-width: 1004px)
+{
+    article #content h1
+    {
+        font-size: calc(48px + 8 * ((100vw - 320px) / 1600));
+    }
+}
+article #content h1:after
+{
+    position: relative;
+
+    display: block;
+
+    width: 4em;
+    height: 2px;
+    margin: 5px auto 0; 
+
+    content: '';
+
+    background-color: #f4511e;
+}
+article #content p
+{
+    font-size: 14px;
+    font-size: 20px; 
+
+    width: 90%;
+    margin: 38px auto;
+
+    text-align: center;
+}
+@media (max-width: 1004px)
+{
+    article #content p
+    {
+        font-size: calc(12px + 2 * ((100vw - 320px) / 684));
+    }
+}
+@media (min-width: 1004px)
+{
+    article #content p
+    {
+        font-size: calc(14px + 6 * ((100vw - 320px) / 1600));
+    }
+}
+article #content .flex-info
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    width: 100%;
+    margin-top: 57px;
+
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+article #content .flex-info .info__elem
+{
+    display: block;
+
+    max-width: 33.333%; 
+    margin: 0;
+    margin-right: 10px;
+    margin-right: 20px;
+    margin-left: 10px;
+    margin-left: 20px;
+    padding: 35px 10px 20px;
+    padding-right: 20px;
+    padding-right: 30px;
+    padding-left: 20px;
+    padding-left: 30px;
+
+    background-color: #ebebeb;
+}
+@media (max-width: 1004px)
+{
+    article #content .flex-info .info__elem
+    {
+        margin-left: calc(5px + 5 * ((100vw - 320px) / 684));
+    }
+}
+@media (min-width: 1004px)
+{
+    article #content .flex-info .info__elem
+    {
+        margin-left: calc(10px + 10 * ((100vw - 320px) / 1600));
+    }
+}
+@media (max-width: 1004px)
+{
+    article #content .flex-info .info__elem
+    {
+        margin-right: calc(5px + 5 * ((100vw - 320px) / 684));
+    }
+}
+@media (min-width: 1004px)
+{
+    article #content .flex-info .info__elem
+    {
+        margin-right: calc(10px + 10 * ((100vw - 320px) / 1600));
+    }
+}
+@media (max-width: 1004px)
+{
+    article #content .flex-info .info__elem
+    {
+        padding-left: calc(10px + 10 * ((100vw - 320px) / 684));
+    }
+}
+@media (min-width: 1004px)
+{
+    article #content .flex-info .info__elem
+    {
+        padding-left: calc(20px + 10 * ((100vw - 320px) / 1600));
+    }
+}
+@media (max-width: 1004px)
+{
+    article #content .flex-info .info__elem
+    {
+        padding-right: calc(10px + 10 * ((100vw - 320px) / 684));
+    }
+}
+@media (min-width: 1004px)
+{
+    article #content .flex-info .info__elem
+    {
+        padding-right: calc(20px + 10 * ((100vw - 320px) / 1600));
+    }
+}
+article #content .flex-info .info__elem img
+{
+    display: block; 
+
+    max-width: 100%;
+    margin: 0 auto;
+}
+article #content .flex-info .info__elem h6
+{
+    font-size: 18px;
+    font-size: 25px; 
+
+    display: block;
+
+    margin: 30px auto 0;
+
+    text-align: center;
+}
+@media (max-width: 1004px)
+{
+    article #content .flex-info .info__elem h6
+    {
+        font-size: calc(15px + 3 * ((100vw - 320px) / 684));
+    }
+}
+@media (min-width: 1004px)
+{
+    article #content .flex-info .info__elem h6
+    {
+        font-size: calc(18px + 7 * ((100vw - 320px) / 1600));
+    }
+}
+article #content .flex-info .info__elem p
+{
+    font-size: 14px;
+    font-size: 20px; 
+
+    display: block;
+
+    width: 100%;
+    margin: 15px auto 0;
+
+    text-align: center;
+}
+@media (max-width: 1004px)
+{
+    article #content .flex-info .info__elem p
+    {
+        font-size: calc(10px + 4 * ((100vw - 320px) / 684));
+    }
+}
+@media (min-width: 1004px)
+{
+    article #content .flex-info .info__elem p
+    {
+        font-size: calc(14px + 6 * ((100vw - 320px) / 1600));
+    }
 }
 
 /* Большие экраны ----------- */

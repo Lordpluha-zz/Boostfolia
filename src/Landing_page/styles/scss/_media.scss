@@ -4,9 +4,9 @@
 	
 }
 
-@for $i from 1824 through 5000 {
+@for $i from 1825 through 5000 {
 	@media only screen and (min-width: 1824px) and (max-width: #{$i}px) {
-		$coof: calc($i - 1824); 
+		$coof: $i - 1824;
 		$CMW: $ContentMaxWidth;
 
 		$ContentMaxWidth: $CMW + $coof;
@@ -14,7 +14,7 @@
 }
 
 /* Настольные компьютеры и ноутбуки ----------- */
-@media only screen  and (min-width: 1280px) {
+@media only screen and (min-width: 1280px) {
 /* стили */
 }
 

@@ -1,4 +1,6 @@
 jQuery(document).ready(function($) {
+	
+	// Header slider
 	var mrg = -100;
 
 	function setML(mrg_) {
@@ -29,4 +31,18 @@ jQuery(document).ready(function($) {
 			setML(mrg);
 		}
 	});
+
+	// Nav effx
+
+	window.onscroll = function scrollFunction() {
+		if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+	    	$('nav #content').css({
+	    		'padding': '10px 30px'
+	    	});
+		} else {
+	    	$('nav #content').css({
+	    		'padding': '30px'
+	    	});
+	  	}
+	}
 });

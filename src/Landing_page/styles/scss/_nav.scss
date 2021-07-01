@@ -5,7 +5,7 @@ nav {
 	left: 0;
 	display: block;
 	background-color: #f8f6f6;
-	z-index: 2;
+	z-index: 22;
 
 	#content {
 		display: flex;
@@ -14,11 +14,11 @@ nav {
 		align-content: center;
 
 		padding: 30px;
-		@include adaptive-value('padding-top', 20, 10, 1);
-		@include adaptive-value('padding-top', 40, 20, 2);
+		// @include adaptive-value('padding-top', 20, 10, 1);
+		// @include adaptive-value('padding-top', 40, 20, 2);
 
-		@include adaptive-value('padding-bottom', 20, 10, 1);
-		@include adaptive-value('padding-bottom', 40, 20, 2);
+		// @include adaptive-value('padding-bottom', 20, 10, 1);
+		// @include adaptive-value('padding-bottom', 40, 20, 2);
 
 		.nav__brand {
 			height: 100%;
@@ -28,7 +28,6 @@ nav {
 
 			.nav__logo {
 				max-width: 100%;
-
 			}
 
 			.nav__title {

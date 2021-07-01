@@ -1,0 +1,9 @@
+nav {
+	padding: 30px;
+		
+	@include adaptive-value('padding-top', 20, 10, 1);
+	@include adaptive-value('padding-top', 40, 20, 2);
+
+	@include adaptive-value('padding-bottom', 20, 10, 1);
+	@include adaptive-value('padding-bottom', 40, 20, 2);
+}

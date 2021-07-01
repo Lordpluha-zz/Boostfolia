@@ -10,6 +10,10 @@ $ContentMaxWidth: 1004;
 // Минимальная поддерживаемая ширина
 $ContentMinWidth: 320;
 
+html {
+	scroll-behavior: smooth;
+}
+
 @import "_mixins.scss";
 @import "_zer0.scss";
 @import "_preloader.scss";
