@@ -29,8 +29,8 @@ article {
 				margin: 0 auto;
 				position: relative;
 
-				@include adaptive-value('font-size', 48, 36, 1);
-				@include adaptive-value('font-size', 56, 48, 2);
+				@include adaptive-value('font-size', 30, 14, 1);
+				@include adaptive-value('font-size', 60, 30, 2);
 
 
 				&:after {
@@ -154,7 +154,7 @@ article {
 				max-width: 100%;
 				color: #fff;
 				@include adaptive-value('font-size', 30, 14, 1);
-				@include adaptive-value('font-size', 80, 30, 2);
+				@include adaptive-value('font-size', 60, 30, 2);
 			}
 
 			p {
@@ -165,7 +165,7 @@ article {
 				color: #535556;
 
 				@include adaptive-value('font-size', 14, 10, 1);
-				@include adaptive-value('font-size', 40, 14, 2);
+				@include adaptive-value('font-size', 30, 14, 2);
 			}
 
 			a {
@@ -173,7 +173,7 @@ article {
 				display: block;
 				
 				@include adaptive-value('margin-top', 40, 30, 1);
-				@include adaptive-value('margin-top', 60, 40, 2);
+				@include adaptive-value('margin-top', 50, 40, 2);
 
 				border: none;
 				border-bottom: 2px solid #b11000;
@@ -197,6 +197,101 @@ article {
 				@include adaptive-value('font-size', 40, 14, 2);
 				
 				
+			}
+		}
+	}
+	.our_works {
+		background-color: #fff;
+
+		#content {
+			padding-top: 70px;
+			text-align: center;
+
+			h1 {
+				@include adaptive-value('font-size', 30, 25, 1);
+				@include adaptive-value('font-size', 60, 30, 2);
+				text-transform: uppercase;
+			}
+
+			p {
+				max-width: 80%;
+				margin: 40px auto 0;
+			}
+
+			.our_works__nav {
+				display: flex;
+				justify-content: space-around;
+				width: 80%;
+				margin: 0 auto;
+				align-items: center;
+				@include adaptive-value('margin-top', 80, 30, 1);
+				@include adaptive-value('margin-top', 100, 80, 2);
+
+				button {
+					margin: 0 5px;
+					border: none;
+
+					&.active {
+						@include adaptive-value('margin-top', 8, 7, 1);
+						@include adaptive-value('margin-top', 20, 8, 2);
+						&:after {
+							content: '';
+							display: block;
+							position: relative;
+							height: 2px;
+							width: 100%;
+							background-color: #e84c3d;
+
+							@include adaptive-value('margin-top', 8, 7, 1);
+							@include adaptive-value('margin-top', 20, 8, 2);
+						}
+					}
+				}
+			}
+		}
+
+		.our_works__slider {
+			position: relative;
+			display: block;
+			height: 80vh;
+			width: 100%;
+			margin-top: 30px;
+			background-color: #fff;
+
+			.layer {
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: grid;
+				grid-template-columns: repeat(1fr, 5);
+				grid-template-rows: repeat(1fr, 3);
+				grid-gap: 1px;
+
+				width: 100%;
+				height: 100%;
+
+				opacity: 0;
+
+				&.active {
+					opacity: 1;
+				}
+
+				@for $i from 1 through 3 {
+					.row#{$i} {
+						grid-row-start: $i;
+						grid-row-end: $i+1;
+					}
+				}
+				@for $i from 1 through 5 {
+					.column#{$i} {
+						grid-column-start: $i;
+						grid-column-end: $i+1;
+					}
+				}
+
+				.layer__grid_elem {
+					background-color: #e84c3d;
+				}
 			}
 		}
 	}
