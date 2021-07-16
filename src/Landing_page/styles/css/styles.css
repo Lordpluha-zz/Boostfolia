@@ -1058,7 +1058,7 @@ article .our_works .our_works__slider
     display: block;
 
     width: 100%;
-    height: 80vh;
+    height: 89.9vh;
     margin-top: 30px;
 
     background-color: #fff;
@@ -1127,6 +1127,134 @@ article .our_works .our_works__slider .layer .column5
 article .our_works .our_works__slider .layer .layer__grid_elem
 {
     background-color: #e84c3d;
+}
+article .our_works .our_works__slider .layer .layer__grid_elem img
+{
+    max-width: 100%;
+    height: 100%;
+}
+article .clients
+{
+    background-color: #1c1c1c;
+}
+article .clients .clients__slider
+{
+    position: relative;
+
+    display: block;
+    overflow: hidden; 
+
+    width: 100%;
+}
+article .clients .clients__slider .slider__tape
+{
+    position: relative;
+
+    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    width: 300%;
+    height: 100%;
+
+    -webkit-transition: all .5s ease-in-out .05s;
+            transition: all .5s ease-in-out .05s; 
+
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+article .clients .clients__slider .slider__tape .slide
+{
+    position: relative;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    width: 33.333%;
+    height: 100%;
+    padding: 0 40px;
+    padding-top: 20px;
+    padding-top: 90px;
+    padding-bottom: 20px;
+    padding-bottom: 80px; 
+
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+@media (max-width: 1004px)
+{
+    article .clients .clients__slider .slider__tape .slide
+    {
+        padding-top: calc(90px + -70 * ((100vw - 320px) / 684));
+    }
+}
+@media (min-width: 1004px)
+{
+    article .clients .clients__slider .slider__tape .slide
+    {
+        padding-top: calc(100px + -10 * ((100vw - 320px) / 2240));
+    }
+}
+@media (max-width: 1004px)
+{
+    article .clients .clients__slider .slider__tape .slide
+    {
+        padding-bottom: calc(80px + -60 * ((100vw - 320px) / 684));
+    }
+}
+@media (min-width: 1004px)
+{
+    article .clients .clients__slider .slider__tape .slide
+    {
+        padding-bottom: calc(90px + -10 * ((100vw - 320px) / 2240));
+    }
+}
+article .clients .clients__slider .slider__tape .slide a
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    width: 20%;
+
+    border: none;
+
+    -ms-flex-item-align: center;
+    align-self: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+}
+article .clients .clients__slider .slider__tape .slide a img
+{
+    width: 100%;
+    margin: 0 auto;
+}
+article .clients .clients__slider .slider__controls
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+article .clients .clients__slider .slider__controls button
+{
+    height: 100%;
+    padding: 0 40px;
+
+    border: none;
 }
 
 /* Большие экраны ----------- */

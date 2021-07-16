@@ -45,4 +45,36 @@ jQuery(document).ready(function($) {
 	    	});
 	  	}
 	}
+
+	// Article__clients slider
+	var mrg = -100;
+
+	function setML(mrg_) {
+		$('article section.clients .clients__slider .slider__tape').css({
+			'margin-left': mrg_+'%'
+		});
+	}
+	setML(mrg);
+
+	$('article section.clients .clients__slider .slider__controls button.left').click(function(event) {
+		mrg += 100;
+		
+		if (mrg > 0) {
+			mrg = -200;
+			setML(mrg);
+		} else {
+			setML(mrg);
+		}
+	});
+
+	$('article section.clients .clients__slider .slider__controls button.right').click(function(event) {
+		mrg -= 100;
+
+		if (mrg < -200) {
+			mrg = 0;
+			setML(mrg);
+		} else {
+			setML(mrg);
+		}
+	});
 });
