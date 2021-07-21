@@ -224,6 +224,7 @@ article {
 				width: 80%;
 				margin: 0 auto;
 				align-items: center;
+				
 				@include adaptive-value('margin-top', 80, 30, 1);
 				@include adaptive-value('margin-top', 100, 80, 2);
 
@@ -231,9 +232,16 @@ article {
 					margin: 0 5px;
 					border: none;
 
+					-webkit-transition: margin-top .0s linear .0s;
+					   -moz-transition: margin-top .0s linear .0s;
+					    -ms-transition: margin-top .0s linear .0s;
+					     -o-transition: margin-top .0s linear .0s;
+					        transition: margin-top .0s linear .0s;					
+
 					&.active {
 						@include adaptive-value('margin-top', 8, 7, 1);
 						@include adaptive-value('margin-top', 20, 8, 2);
+
 						&:after {
 							content: '';
 							display: block;
@@ -276,6 +284,26 @@ article {
 					opacity: 1;
 				}
 
+				&.layer1 .layer__grid_elem {
+					background-color: #e84c3d;
+				}
+
+				&.layer2 .layer__grid_elem {
+					background-color: #4D3DE8;
+				}
+
+				&.layer3 .layer__grid_elem {
+					background-color: #45E83D;
+				}
+
+				&.layer4 .layer__grid_elem {
+					background-color: #E6E83D;
+				}
+
+				&.layer5 .layer__grid_elem {
+					background-color: #E83DE6;
+				}
+
 				@for $i from 1 through 3 {
 					.row#{$i} {
 						grid-row-start: $i;
@@ -290,7 +318,6 @@ article {
 				}
 
 				.layer__grid_elem {
-					background-color: #e84c3d;
 
 					img {
 						max-width: 100%;
@@ -303,6 +330,7 @@ article {
 
 	.clients {
 		background-color: #1c1c1c;
+
 		.clients__slider {
 			display: block;
 			position: relative;
@@ -320,18 +348,23 @@ article {
 
 				.slide {
 					position: relative;
-					display: flex;
-					justify-content: space-around;
 					width: 33.333%;
 					height: 100%;
-					padding: 0 40px;
+					
+					#content {
+						display: flex;
+						justify-content: space-around;
+						height: 100%;
+						padding: 0 90px;
 
-					@include adaptive-value('padding-top', 20, 90, 1);
-					@include adaptive-value('padding-top', 90, 100, 2);
 
-					@include adaptive-value('padding-bottom', 20, 80, 1);
-					@include adaptive-value('padding-bottom', 80, 90, 2);
+						@include adaptive-value('padding-top', 10, 70, 1);
+						@include adaptive-value('padding-top', 70, 100, 2);
 
+						@include adaptive-value('padding-bottom', 10, 80, 1);
+						@include adaptive-value('padding-bottom', 80, 90, 2);
+
+					}
 					a {
 						display: flex;
 						width: 20%;
@@ -350,21 +383,26 @@ article {
 
 			.slider__controls {
 				display: block;
-				width: 100%;
 				position: absolute;
 				top: 0;
 				left: 0;
+
 				height: 100%;
-				display: flex;
-				justify-content: space-between;
+				width: 100%;
 				
-				button {
+				#content {
+					display: flex;
+					justify-content: space-between;
 					height: 100%;
-					padding: 0 40px;
-					border: none;
 
-					img {
+					button {
+						height: 100%;
+						padding: 0 45px;
+						border: none;
 
+						img {
+
+						}
 					}
 				}
 			}

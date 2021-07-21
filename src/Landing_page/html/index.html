@@ -38,7 +38,6 @@
 
         <header>
     
-
     <div class="header__slider">
         
         <div class="slider__tape">
@@ -57,8 +56,8 @@
                 <!-- Center -->
                 <div id="content">
                     <div class="container">
-                        <h1>WE THINK CREATIVE BE CREATIVE</h1>
-                        <h6>LIKE TO DO CREATIVE WORKS</h6>
+                        <h1 class="_anim-elem">WE THINK CREATIVE BE CREATIVE</h1>
+                        <h6 class="_anim-elem">LIKE TO DO CREATIVE WORKS</h6>
                     </div>
                 </div>
             </div>
@@ -107,7 +106,7 @@
         <article>
     <section class="about_us">
         <div id="content">
-            <h1>About Us</h1>
+            <h1 class="_anim-elem">About Us</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
 
             <div class="flex-info">
@@ -155,14 +154,13 @@
             <a href="#">Play Now</a>
         </div>
 
-        <video loop autoplay muted preload="metadata" src="https://www.youtube.com/embed/43Ds0ZuI_F0" poster="../img/article/video/Video_BG.min.png"></video>
+        <!-- <video loop autoplay muted preload="metadata" src="https://www.youtube.com/embed/43Ds0ZuI_F0" poster="../img/article/video/Video_BG.min.png"></video> -->
 
-        <!-- <iframe width="1309" height="480" src="https://www.youtube.com/embed/43Ds0ZuI_F0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   --> 
+        <!-- <iframe width="500" height="500" src="https://www.youtube.com/embed/43Ds0ZuI_F0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
     </section>
 
     <section class="our_works">
         
-
         <div id="content">
             <h1>Our Works</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
@@ -180,7 +178,6 @@
         </div>
 
         <div class="our_works__slider">
-            
             <div class="layer layer1 all_projects active">
                 
                 <div class="layer__grid_elem column1 row1"></div>
@@ -277,50 +274,62 @@
                 <div class="layer__grid_elem column4 row3"></div>
                 <div class="layer__grid_elem column5 row3"></div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="clients">
+    <section class="clients">
 
             <div class="clients__slider">
                 
                 <div class="slider__tape">
                     
                     <div class="slide slide1">
-                        <a href="#"><img src="../img/article/clients/1.min.png" alt=""></a>
-                        <a href="#"><img src="../img/article/clients/2.min.png" alt=""></a>
-                        <a href="#"><img src="../img/article/clients/3.min.png" alt=""></a>
+                        <div id="content">
+                            <a href="#"><img src="../img/article/clients/1.min.png" alt=""></a>
+                            <a href="#"><img src="../img/article/clients/2.min.png" alt=""></a>
+                            <a href="#"><img src="../img/article/clients/3.min.png" alt=""></a>
+                        </div>
                     </div>
 
                     <div class="slide slide2">
-                        <a href="#"><img src="../img/article/clients/1.min.png" alt=""></a>
-                        <a href="#"><img src="../img/article/clients/2.min.png" alt=""></a>
-                        <a href="#"><img src="../img/article/clients/3.min.png" alt=""></a>
+                        <div id="content">
+                            <a href="#"><img src="../img/article/clients/1.min.png" alt=""></a>
+                            <a href="#"><img src="../img/article/clients/2.min.png" alt=""></a>
+                            <a href="#"><img src="../img/article/clients/3.min.png" alt=""></a>
+                        </div>
                     </div>
 
                     <div class="slide slide3">
-                        <a href="#"><img src="../img/article/clients/1.min.png" alt=""></a>
-                        <a href="#"><img src="../img/article/clients/2.min.png" alt=""></a>
-                        <a href="#"><img src="../img/article/clients/3.min.png" alt=""></a>
+                        <div id="content">
+                            <a href="#"><img src="../img/article/clients/1.min.png" alt=""></a>
+                            <a href="#"><img src="../img/article/clients/2.min.png" alt=""></a>
+                            <a href="#"><img src="../img/article/clients/3.min.png" alt=""></a>
+                        </div>
                     </div>
+
+                   
                 </div>
 
                 <div class="slider__controls">
-                    
-                    <button class="left">
-                        <img src="../img/article/clients/left.min.png" alt="">
-                    </button>
+                    <div id="content">
+                        <button class="left">
+                            <img src="../img/article/clients/left.min.png" alt="">
+                        </button>
 
-                    <button class="right">
-                        <img src="../img/article/clients/right.min.png" alt="">
-                    </button>
-
+                        <button class="right">
+                            <img src="../img/article/clients/right.min.png" alt="">
+                        </button>
+                    </div>
                 </div>
 
             </div>
 
-        </section>
+    </section>
 
-    </div>
+    <section class="">
+        
+    </section>
+
 </article>
 
         <aside>
@@ -328,7 +337,19 @@
 </aside>
 
         <footer>
-    <h1>Footer</h1>
+    <section class="location_on_map">
+        
+        <iframe 
+            width="600"
+            height="450"
+            style="border:0"
+            loading="lazy"
+            allowfullscreen
+            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJe6tUMeDf2kARbhhrfRc6-rA&key=AIzaSyB1Rk1_P4DhOKcIOlElF9dHO6p2JFu47hI">
+        
+        </iframe>
+
+    </section>
 </footer>
 
     </div>

@@ -125,6 +125,26 @@ body.lock
     overflow: hidden;
 }
 
+._anim-elem
+{
+    -webkit-transition: transform, opacity .8s ease-in-out .0s;
+    -webkit-transition: opacity .8s ease-in-out .0s, -webkit-transform;
+            transition: opacity .8s ease-in-out .0s, -webkit-transform;
+            transition: transform, opacity .8s ease-in-out .0s;
+            transition: transform, opacity .8s ease-in-out .0s, -webkit-transform; 
+    -webkit-transform: translate(0, -100%);
+            transform: translate(0, -100%);
+
+    opacity: 0;
+}
+._anim-elem._active__fx
+{
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+
+    opacity: 1;
+}
+
 nav
 {
     position: fixed;
@@ -1001,6 +1021,9 @@ article .our_works #content .our_works__nav button
 {
     margin: 0 5px;
 
+    -webkit-transition: margin-top .0s linear .0s;
+            transition: margin-top .0s linear .0s; 
+
     border: none;
 }
 article .our_works #content .our_works__nav button.active
@@ -1084,6 +1107,26 @@ article .our_works .our_works__slider .layer.active
 {
     opacity: 1;
 }
+article .our_works .our_works__slider .layer.layer1 .layer__grid_elem
+{
+    background-color: #e84c3d;
+}
+article .our_works .our_works__slider .layer.layer2 .layer__grid_elem
+{
+    background-color: #4d3de8;
+}
+article .our_works .our_works__slider .layer.layer3 .layer__grid_elem
+{
+    background-color: #45e83d;
+}
+article .our_works .our_works__slider .layer.layer4 .layer__grid_elem
+{
+    background-color: #e6e83d;
+}
+article .our_works .our_works__slider .layer.layer5 .layer__grid_elem
+{
+    background-color: #e83de6;
+}
 article .our_works .our_works__slider .layer .row1
 {
     grid-row-start: 1;
@@ -1123,10 +1166,6 @@ article .our_works .our_works__slider .layer .column5
 {
     grid-column-start: 5;
     grid-column-end: 6;
-}
-article .our_works .our_works__slider .layer .layer__grid_elem
-{
-    background-color: #e84c3d;
 }
 article .our_works .our_works__slider .layer .layer__grid_elem img
 {
@@ -1168,16 +1207,20 @@ article .clients .clients__slider .slider__tape .slide
 {
     position: relative;
 
+    width: 33.333%;
+    height: 100%;
+}
+article .clients .clients__slider .slider__tape .slide #content
+{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
 
-    width: 33.333%;
     height: 100%;
-    padding: 0 40px;
-    padding-top: 20px;
-    padding-top: 90px;
-    padding-bottom: 20px;
+    padding: 0 90px;
+    padding-top: 10px;
+    padding-top: 70px;
+    padding-bottom: 10px;
     padding-bottom: 80px; 
 
     -ms-flex-pack: distribute;
@@ -1185,28 +1228,28 @@ article .clients .clients__slider .slider__tape .slide
 }
 @media (max-width: 1004px)
 {
-    article .clients .clients__slider .slider__tape .slide
+    article .clients .clients__slider .slider__tape .slide #content
     {
-        padding-top: calc(90px + -70 * ((100vw - 320px) / 684));
+        padding-top: calc(70px + -60 * ((100vw - 320px) / 684));
     }
 }
 @media (min-width: 1004px)
 {
-    article .clients .clients__slider .slider__tape .slide
+    article .clients .clients__slider .slider__tape .slide #content
     {
-        padding-top: calc(100px + -10 * ((100vw - 320px) / 2240));
+        padding-top: calc(100px + -30 * ((100vw - 320px) / 2240));
     }
 }
 @media (max-width: 1004px)
 {
-    article .clients .clients__slider .slider__tape .slide
+    article .clients .clients__slider .slider__tape .slide #content
     {
-        padding-bottom: calc(80px + -60 * ((100vw - 320px) / 684));
+        padding-bottom: calc(80px + -70 * ((100vw - 320px) / 684));
     }
 }
 @media (min-width: 1004px)
 {
-    article .clients .clients__slider .slider__tape .slide
+    article .clients .clients__slider .slider__tape .slide #content
     {
         padding-bottom: calc(90px + -10 * ((100vw - 320px) / 2240));
     }
@@ -1238,21 +1281,26 @@ article .clients .clients__slider .slider__controls
     left: 0;
 
     display: block;
+
+    width: 100%; 
+    height: 100%;
+}
+article .clients .clients__slider .slider__controls #content
+{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
 
-    width: 100%;
-    height: 100%;
+    height: 100%; 
 
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
 }
-article .clients .clients__slider .slider__controls button
+article .clients .clients__slider .slider__controls #content button
 {
     height: 100%;
-    padding: 0 40px;
+    padding: 0 45px;
 
     border: none;
 }

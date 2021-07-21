@@ -47,6 +47,21 @@ body {
 		overflow: hidden;
 	}
 }
+
+._anim-elem {
+	transform: translate(0, -100%);
+	opacity: 0;
+	-webkit-transition: transform, opacity .8s ease-in-out .0s;
+	   -moz-transition: transform, opacity .8s ease-in-out .0s;
+	    -ms-transition: transform, opacity .8s ease-in-out .0s;
+	     -o-transition: transform, opacity .8s ease-in-out .0s;
+	        transition: transform, opacity .8s ease-in-out .0s;
+	&._active__fx {
+		transform: translate(0, 0);
+		opacity: 1;
+	}
+}
+
 @import "_nav.scss";
 @import "_header.scss";
 @import "_article.scss";
