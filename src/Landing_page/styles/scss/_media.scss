@@ -53,14 +53,15 @@
 		.video {
 			flex-direction: column;
 			justify-content: none;
+			
 			.content {
 				width: 100%;
 			}
 
-			video {
+			video,iframe {
 				max-width: 100%;
 				width: 100%;
-				max-height: 100vh;
+				height: 50vh;
 			}
 		}
 	}

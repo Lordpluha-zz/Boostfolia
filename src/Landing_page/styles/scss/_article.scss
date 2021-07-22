@@ -59,6 +59,8 @@ article {
 				margin-top: 57px;
 				justify-content: space-between;
 
+				
+
 				.info__elem {
 					display: block;
 					margin: 0;
@@ -79,6 +81,8 @@ article {
 					@include adaptive-value('padding-right', 30, 20, 2);
 
 					max-width: 33.333%;
+					
+					@include beaut_blocks(3, .2, $AnimDelay);
 
 					img {
 						margin: 0 auto;
@@ -115,17 +119,16 @@ article {
 		background-color: #171f23;
 		align-items: center;
 
-		video {
-			max-width: 50%;
+		video,iframe {
 			width: 50%;
-			max-height: 100%;
-			height: 100%;
-
+			height: 50vh;
+			/*
 			&[poster] {
 				display: block;
 				height: 100%;
 				width: 100%;
 			}
+			*/
 		}
 
 		.content {
@@ -237,21 +240,22 @@ article {
 					    -ms-transition: margin-top .0s linear .0s;
 					     -o-transition: margin-top .0s linear .0s;
 					        transition: margin-top .0s linear .0s;					
+					&:after {
+						content: '';
+						position: relative;
+						display: block;
+						opacity: 0;
+						background-color: #e84c3d;
 
-					&.active {
 						@include adaptive-value('margin-top', 8, 7, 1);
 						@include adaptive-value('margin-top', 20, 8, 2);
+					}
 
+					&.active {
 						&:after {
-							content: '';
-							display: block;
-							position: relative;
+							opacity: 1;
 							height: 2px;
 							width: 100%;
-							background-color: #e84c3d;
-
-							@include adaptive-value('margin-top', 8, 7, 1);
-							@include adaptive-value('margin-top', 20, 8, 2);
 						}
 					}
 				}

@@ -16,11 +16,11 @@ header {
 			justify-content: space-between;
 			width: 300%;
 			height: 100%;
-			-webkit-transition: all .8s ease-out;
-			   -moz-transition: all .8s ease-out;
-			    -ms-transition: all .8s ease-out;
-			     -o-transition: all .8s ease-out;
-			        transition: all .8s ease-out;
+			-webkit-transition: margin-left .8s ease-in-out;
+			   -moz-transition: margin-left .8s ease-in-out;
+			    -ms-transition: margin-left .8s ease-in-out;
+			     -o-transition: margin-left .8s ease-in-out;
+			        transition: margin-left .8s ease-in-out;
 
 			.slider__slide {
 				width: 33.333%;
@@ -99,7 +99,6 @@ header {
 					}
 				}
 			}
-			
 		}
 	}
 }

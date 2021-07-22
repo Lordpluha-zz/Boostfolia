@@ -2,8 +2,7 @@ jQuery(document).ready(function($) {
 	
 	console.clear();
 
-	// Text upploading effect
-	
+	// Content upploading effect
 	const AnimItems = $('._anim-elem');
 
 	function offset(el) {
@@ -27,15 +26,13 @@ jQuery(document).ready(function($) {
 
 			if ((pageYOffset > AnimItemOffset - animItemPoint) && pageYOffset < (AnimItemOffset + AnimItemHeight)) {
 				AnimItem.classList.add('_active__fx');
-			} else {
-				AnimItem.classList.remove('_active__fx');
 			}
 		}
 	}
 
 	$(window).scroll(animOnScroll);
 
-	animOnScroll();
+	setTimeout(animOnScroll, 300);
 
 	// Header slider
 	var mrg1 = -100;

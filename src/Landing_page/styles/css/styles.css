@@ -127,11 +127,13 @@ body.lock
 
 ._anim-elem
 {
-    -webkit-transition: transform, opacity .8s ease-in-out .0s;
-    -webkit-transition: opacity .8s ease-in-out .0s, -webkit-transform;
-            transition: opacity .8s ease-in-out .0s, -webkit-transform;
-            transition: transform, opacity .8s ease-in-out .0s;
-            transition: transform, opacity .8s ease-in-out .0s, -webkit-transform; 
+    -webkit-transition: margin, padding .0s linear;
+    -webkit-transition: opacity 1s ease-in-out 0s, transform 1s ease-in-out 0s;
+    -webkit-transition: opacity 1s ease-in-out 0s, -webkit-transform 1s ease-in-out 0s;
+            transition: margin, padding .0s linear;
+            transition: opacity 1s ease-in-out 0s, -webkit-transform 1s ease-in-out 0s;
+            transition: opacity 1s ease-in-out 0s, transform 1s ease-in-out 0s;
+            transition: opacity 1s ease-in-out 0s, transform 1s ease-in-out 0s, -webkit-transform 1s ease-in-out 0s; 
     -webkit-transform: translate(0, -100%);
             transform: translate(0, -100%);
 
@@ -139,8 +141,8 @@ body.lock
 }
 ._anim-elem._active__fx
 {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
 
     opacity: 1;
 }
@@ -252,8 +254,8 @@ header .header__slider .slider__tape
     width: 300%;
     height: 100%;
 
-    -webkit-transition: all .8s ease-out;
-            transition: all .8s ease-out; 
+    -webkit-transition: margin-left .8s ease-in-out;
+            transition: margin-left .8s ease-in-out; 
 
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
@@ -613,6 +615,21 @@ article .about_us #content .flex-info .info__elem
         padding-right: calc(20px + 10 * ((100vw - 320px) / 2240));
     }
 }
+article .about_us #content .flex-info .info__elem:nth-child(1)
+{
+    -webkit-transition-delay: .1s;
+            transition-delay: .1s;
+}
+article .about_us #content .flex-info .info__elem:nth-child(2)
+{
+    -webkit-transition-delay: .3s;
+            transition-delay: .3s;
+}
+article .about_us #content .flex-info .info__elem:nth-child(3)
+{
+    -webkit-transition-delay: .5s;
+            transition-delay: .5s;
+}
 article .about_us #content .flex-info .info__elem img
 {
     display: block; 
@@ -685,19 +702,18 @@ article .video
     -ms-flex-align: center;
     align-items: center;
 }
-article .video video
+article .video video,
+article .video iframe
 {
     width: 50%;
-    max-width: 50%;
-    height: 100%; 
-    max-height: 100%;
-}
-article .video video[poster]
-{
-    display: block;
-
-    width: 100%; 
-    height: 100%;
+    height: 50vh;
+    /*
+			&[poster] {
+				display: block;
+				height: 100%;
+				width: 100%;
+			}
+			*/
 }
 article .video .content
 {
@@ -1026,53 +1042,40 @@ article .our_works #content .our_works__nav button
 
     border: none;
 }
-article .our_works #content .our_works__nav button.active
+article .our_works #content .our_works__nav button:after
 {
+    position: relative;
+
+    display: block;
+
     margin-top: 8px;
-    margin-top: 20px;
+    margin-top: 20px; 
+
+    content: '';
+
+    opacity: 0;
+    background-color: #e84c3d;
 }
 @media (max-width: 1004px)
 {
-    article .our_works #content .our_works__nav button.active
+    article .our_works #content .our_works__nav button:after
     {
         margin-top: calc(7px + 1 * ((100vw - 320px) / 684));
     }
 }
 @media (min-width: 1004px)
 {
-    article .our_works #content .our_works__nav button.active
+    article .our_works #content .our_works__nav button:after
     {
         margin-top: calc(8px + 12 * ((100vw - 320px) / 2240));
     }
 }
 article .our_works #content .our_works__nav button.active:after
 {
-    position: relative;
-
-    display: block;
-
-    width: 100%;
+    width: 100%; 
     height: 2px;
-    margin-top: 8px;
-    margin-top: 20px; 
 
-    content: '';
-
-    background-color: #e84c3d;
-}
-@media (max-width: 1004px)
-{
-    article .our_works #content .our_works__nav button.active:after
-    {
-        margin-top: calc(7px + 1 * ((100vw - 320px) / 684));
-    }
-}
-@media (min-width: 1004px)
-{
-    article .our_works #content .our_works__nav button.active:after
-    {
-        margin-top: calc(8px + 12 * ((100vw - 320px) / 2240));
-    }
+    opacity: 1;
 }
 article .our_works .our_works__slider
 {
@@ -1375,11 +1378,12 @@ article .clients .clients__slider .slider__controls #content button
     {
         width: 100%;
     }
-    article .video video
+    article .video video,
+    article .video iframe
     {
         width: 100%;
         max-width: 100%;
-        max-height: 100vh;
+        height: 50vh;
     }
 }
 

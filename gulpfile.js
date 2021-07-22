@@ -814,6 +814,8 @@ function index(event) {
 };
 
 // Работа со стрилями
+
+// Поправить работу SourceMap
 async function styles(event) {
 	return gulp.src(`./${source_dir}/${start_page}/${styles_dir_name}/${scss_dir_name}/${styles_main_file_name}.scss`)
 
@@ -845,7 +847,7 @@ async function styles(event) {
 		.pipe( clean_css() )
 		.pipe( rname({suffix: '.min'}) )
 
-		.pipe( gulp.dest(`./${source_dir}/${start_page}/${styles_dir_name}/${css_dir_name}/`) )
+		.pipe( gulp.dest(`./${source_dir}/${start_page}/${styles_dir_name}/${css_dir_name}/`) )		
 		.pipe( browserSync.stream() );
 
 	// del(`./${source_dir}/${start_page}/${styles_dir_name}/${css_dir_name}/styles.css.min.map`);

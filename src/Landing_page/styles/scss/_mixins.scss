@@ -22,3 +22,19 @@
 		#{$property}: calc(#{$SiteMaxWidth + px} + #{$addSize} * ((100vw - #{$ContentMinWidth}px) / #{$SiteMaxWidth - #{$ContentMinWidth}} ) );
 	}
 }
+
+@mixin beaut_blocks($NumOfElems, $DelayCoof, $AnimDelay) {
+	$AnimDelayV: $AnimDelay+.1;
+					
+	@for $i from 1 through $NumOfElems {
+		&:nth-child(#{$i}) {
+			-webkit-transition-delay: $AnimDelayV;
+	   		   -moz-transition-delay: $AnimDelayV;
+	   		    -ms-transition-delay: $AnimDelayV;
+	   		     -o-transition-delay: $AnimDelayV;
+	   		        transition-delay: $AnimDelayV;
+		}
+
+		$AnimDelayV: $AnimDelayV+$DelayCoof;
+	}
+}
