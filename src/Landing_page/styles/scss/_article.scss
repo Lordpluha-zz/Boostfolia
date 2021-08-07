@@ -16,10 +16,10 @@ article {
 		background-color: #fff;
 		
 		#content {
-			@include adaptive-value('padding-top', 95, 50, 1);
+			@include adaptive-value('padding-top', 95, 60, 1);
 			@include adaptive-value('padding-top', 120, 95, 2);
 
-			@include adaptive-value('padding-bottom', 119, 90, 1);
+			@include adaptive-value('padding-bottom', 119, 0, 1);
 			@include adaptive-value('padding-bottom', 138, 119, 2);
 			
 			h1 {
@@ -29,7 +29,7 @@ article {
 				margin: 0 auto;
 				position: relative;
 
-				@include adaptive-value('font-size', 30, 14, 1);
+				@include adaptive-value('font-size', 30, 25, 1);
 				@include adaptive-value('font-size', 60, 30, 2);
 
 
@@ -49,8 +49,8 @@ article {
 				width: 90%;
 				margin: 38px auto;
 
-				@include adaptive-value('font-size', 14, 12, 1);
-				@include adaptive-value('font-size', 20, 14, 2);
+				@include adaptive-value('font-size', 18, 14, 1);
+				@include adaptive-value('font-size', 25, 18, 2);
 			}
 
 			.flex-info {
@@ -58,8 +58,6 @@ article {
 				width: 100%;
 				margin-top: 57px;
 				justify-content: space-between;
-
-				
 
 				.info__elem {
 					display: block;
@@ -156,14 +154,14 @@ article {
 			h1 {
 				max-width: 100%;
 				color: #fff;
-				@include adaptive-value('font-size', 30, 14, 1);
+				@include adaptive-value('font-size', 30, 25, 1);
 				@include adaptive-value('font-size', 60, 30, 2);
 			}
 
 			p {
 				max-width: 100%;
-				@include adaptive-value('margin-top', 20, 15, 1);
-				@include adaptive-value('margin-top', 40, 20, 2);
+				@include adaptive-value('margin-top', 25, 20, 1);
+				@include adaptive-value('margin-top', 40, 25, 2);
 
 				color: #535556;
 
@@ -322,6 +320,22 @@ article {
 				}
 
 				.layer__grid_elem {
+					display: block;
+					position: relative;
+					z-index: 5;
+					cursor: pointer;
+					-webkit-transition: box-shadow .5s ease;
+					   -moz-transition: box-shadow .5s ease;
+					    -ms-transition: box-shadow .5s ease;
+					     -o-transition: box-shadow .5s ease;
+					        transition: box-shadow .5s ease;
+					&:hover {
+						z-index: 6;
+						box-shadow: 0px 1px 15px #ccc,
+									0px -1px 15px #ccc,
+									1px 0px 15px #ccc,
+									-1px 0px 15px #ccc;
+					}
 
 					img {
 						max-width: 100%;

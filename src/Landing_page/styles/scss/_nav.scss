@@ -1,11 +1,15 @@
 nav {
-	width: 100%;
 	position: fixed;
+	display: block;
+	
+	width: 100%;
+	
+	z-index: 22;
+
 	top: 0;
 	left: 0;
-	display: block;
+	
 	background-color: #f8f6f6;
-	z-index: 22;
 
 	#content {
 		display: flex;
@@ -33,16 +37,86 @@ nav {
 			.nav__title {
 				@include adaptive-value('font-size', 40, 30, 1);
 				@include adaptive-value('font-size', 60, 40, 2);
+				color: black;
 			}
 		}
 
 		.nav__burger {
-			flex: 0 0 auto;
-			
-			img {
-				max-width: 100%;
+			display: block;
+			border: none;
+			height: 40px;
+			width: 40px;
+
+			div {
+				display: block;
+				position: relative;
+				height: 3px;
+				width: 100%;
+				background-color: black;
+			}
+
+			&.passive {
+				position: relative;
+				z-index: 24;
+
+				div {
+					&:nth-child(1) {
+						margin: 0 0 5px 0;
+					}
+					&:nth-child(2) {
+						display: block;
+						margin: 10px 0 10px;
+					}
+					&:nth-child(3) {
+						margin: 5px 0 0;
+					}
+				}
+			}
+
+			&.active {
+				position: fixed;
+				z-index: 25;
+
+				div {
+
+					&:nth-child(1) {
+						margin: 5px 0 0 0;
+						transform: rotate(45deg);
+					}
+					&:nth-child(2) {
+						display: none;
+						margin: 0;
+					}
+					&:nth-child(3) {
+						transform: rotate(-45deg);
+						margin: 0 5px 0 0;
+					}
+				}
 			}
 		}
+	}
+	.nav__burger-nav {
+		position: absolute;
+		height: 100vh;
+		overflow: hidden;
+		z-index: 21;
+		background-color: #fff;
+		top: 0;
+		right: 0;
+		transition: width 1s ease 0s;
 
+		&.passive {
+			display: none;
+			width: 0;
+		}
+		&.active {
+			display: block;
+			width: 100%;
+		}
+
+		#content {
+
+		}
 	}
 }
+

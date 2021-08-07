@@ -55,13 +55,13 @@ header {
 							@include adaptive-value('font-size', 72, 30, 2);
 							@include adaptive-value('font-size', 50, 25, 1);
 							// font-size: 72px;
+							color: black;
 						}
 
 						h6 {
 							@include adaptive-value('font-size', 36, 20, 2);
 							@include adaptive-value('font-size', 20, 15, 1);
 							// font-size: 36px;
-							margin-top: 40px;
 						}
 					}
 					

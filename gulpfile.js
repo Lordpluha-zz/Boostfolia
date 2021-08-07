@@ -14,8 +14,6 @@ const gulp = require('gulp'),
 		csscomb 		= require('gulp-csscomb'),
 		// Сжатие CSS
 		clean_css 		= require('gulp-clean-css'),
-		// Проверка наличия ошибок
-		scsslint 		= require('gulp-sass-lint'),
 
 		// SVG to fonts
 		iconfont 		= require('gulp-iconfont'),
@@ -755,7 +753,7 @@ function clear_project(event) {
 
 // Перезагрузка браузера
 function browserReload() {
-  	browserSync.reload();
+  	browserSync.reload({ stream:true });
 };
 
 // Создание Localhost сервера
@@ -765,7 +763,14 @@ function browser(event) {
 		browserSync.init({
 			https: true,
     		proxy: proxy,
-  			port: port
+  			port: port,
+  			injectChanges: true,
+  			// Синхронизация всех устройств и их действий
+			ghostMode: {
+			    clicks: true,
+			    forms: true,
+			    scroll: false
+			}
     	});
 	} else {
 		browserSync.init({
@@ -773,6 +778,7 @@ function browser(event) {
 	    		baseDir: `./${source_dir}/${start_page}/`,
 	    		// https: true
 	    	},
+	    	injectChanges: true,
 	    	rewriteRules: [
 			  	{
 			      	match: /Content-Security-Policy/,
@@ -781,6 +787,12 @@ function browser(event) {
 			      	}
 			  	}
 			],
+			// Синхронизация всех устройств и их действий
+			ghostMode: {
+			    clicks: true,
+			    forms: true,
+			    scroll: false
+			}
     	});
 	}
   	event();
@@ -809,17 +821,17 @@ function index(event) {
 		.pipe( rname({ extname: 'index.min.html', basename: '' }))
 
 		.pipe( gulp.dest(`./${source_dir}/${start_page}/${html_dir_name}/`) )
-		.pipe( browserSync.stream() );
+		.pipe( browserSync.reload({ stream:true }) );
+	
 	event();
 };
 
 // Работа со стрилями
 
 // Поправить работу SourceMap
-async function styles(event) {
+function styles(event) {
 	return gulp.src(`./${source_dir}/${start_page}/${styles_dir_name}/${scss_dir_name}/${styles_main_file_name}.scss`)
 
-		.pipe( scsslint() )	
 		.pipe( sourcemaps.init() )
 
 		.pipe( scss ({
@@ -836,23 +848,29 @@ async function styles(event) {
   		    cascade: false
 		}))
 		.pipe( postcss() )
+		
+		// Beautifying
 		.pipe( csscomb() )
 
+		// Выгрузка sourcemap
 		.pipe( sourcemaps.write(`./`) )
 
 		// Очистка кеша путей (удаление доп. авто-путей gulp)
 		.pipe( rname({dirname: ""}) )
 
+		// Выгрузка красивого css
 		.pipe( gulp.dest(`./${source_dir}/${start_page}/${styles_dir_name}/${css_dir_name}/`))
+		
+		// Минификация
 		.pipe( clean_css() )
 		.pipe( rname({suffix: '.min'}) )
 
-		.pipe( gulp.dest(`./${source_dir}/${start_page}/${styles_dir_name}/${css_dir_name}/`) )		
+		// Выгрузка минимизированного файла
+		.pipe( gulp.dest(`./${source_dir}/${start_page}/${styles_dir_name}/${css_dir_name}/`) )
 		.pipe( browserSync.stream() );
 
 	// del(`./${source_dir}/${start_page}/${styles_dir_name}/${css_dir_name}/styles.css.min.map`);
 
-	event();
 };
 
 // Работа с картинками
@@ -903,8 +921,7 @@ async function scripts(event) {
 			.pipe( rname({ suffix: '.min'}) )
 
 			.pipe( gulp.dest(`./${source_dir}/${start_page}/${javascript_dir_name}/${item1}/`))
-
-			.pipe( browserSync.stream() );
+			.pipe( browserSync.reload({ stream:true }) );
 	});
 
 	// JSON
