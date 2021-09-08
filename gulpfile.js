@@ -1,7 +1,7 @@
 // *** Плагины ***
 const gulp = require('gulp'),
 	  // SCSS
-		scss 			= require('gulp-sass'),
+		scss 			= require('gulp-sass')(require('sass')),
 		// Обработка ошибок gulp-sass
 		notify 			= require('gulp-notify')
 		// PostCSS (CSS4)
@@ -901,7 +901,7 @@ async function img(event) {
 // Javascript обработка
 async function scripts(event) {
 
-	let js_dirs = [Ajax_dir_name, scripts_dir_name]
+	let js_dirs = [scripts_dir_name, Ajax_dir_name]
 
 	js_dirs.forEach( function(item1, index1, arr1) {
 		gulp.src([`./${source_dir}/${start_page}/${javascript_dir_name}/${item1}/*.js`,
@@ -909,12 +909,7 @@ async function scripts(event) {
 
 			// Beautifying
 			.pipe( eslint() )
-			.pipe( eslint.results(result => {
-					console.log(`ESLint result: ${JSON.stringify(result).filePath}`);
-			        console.log(`Total ${item1} Results: ${result.length}`);
-			        console.log(`Total ${item1} Warnings: ${result.warningCount}`);
-			        console.log(`Total ${item1} Errors: ${result.errorCount}`);
-			    }) )
+			.pipe(eslint.format())
 
 			// Compressing
 			// .pipe( uglify() )
@@ -925,17 +920,17 @@ async function scripts(event) {
 	});
 
 	// JSON
-	gulp.src([`./${source_dir}/${start_page}/${javascript_dir_name}/${JSON_dir_name}/*.json`,
-				  `!./${source_dir}/${start_page}/${javascript_dir_name}/${JSON_dir_name}/*.min.json`])
+	// gulp.src([`./${source_dir}/${start_page}/${javascript_dir_name}/${JSON_dir_name}/*.json`,
+	// 			  `!./${source_dir}/${start_page}/${javascript_dir_name}/${JSON_dir_name}/*.min.json`])
 		
-		// .pipe( json_lint() )
-		// .pipe( json_lint.reporter() )
+	// 	.pipe( json_lint() )
+	// 	.pipe( json_lint.reporter() )
 
-		// Compressing
-		.pipe( json_minify() )
-		.pipe( rname({ suffix: '.min'}) )
+	// 	// Compressing
+	// 	.pipe( json_minify() )
+	// 	.pipe( rname({ suffix: '.min'}) )
 
-		.pipe( gulp.dest(`./${source_dir}/${start_page}/${javascript_dir_name}/${JSON_dir_name}/`));
+	// 	.pipe( gulp.dest(`./${source_dir}/${start_page}/${javascript_dir_name}/${JSON_dir_name}/`));
 
 	event();
 };

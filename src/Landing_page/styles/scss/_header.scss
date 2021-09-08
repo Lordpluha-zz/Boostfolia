@@ -53,7 +53,7 @@ header {
 						h1 {
 							width: 100%;
 							@include adaptive-value('font-size', 72, 30, 2);
-							@include adaptive-value('font-size', 50, 25, 1);
+							@include adaptive-value('font-size', 30, 25, 1);
 							// font-size: 72px;
 							color: black;
 						}
@@ -96,6 +96,104 @@ header {
 					}
 					&.right {
 						padding: 40px;
+					}
+				}
+			}
+
+			.slider__slide_to_down {
+				position: absolute;
+				bottom: 5%;
+				width: 100%;
+
+				@keyframes animation-mouse {
+					
+
+
+					// Main Options
+					$delta-perc: 2%;
+					$delta-prog: 1;
+
+
+					$elem-x: -$delta-perc;
+					$elem-y: math.div($delta-perc, 2);
+
+					
+					@for $i from 0 through 25 {
+						@if ($i % $delta-prog == 0) {
+							$elem-x: $elem-x + $delta-perc;
+							$elem-y: $elem-y - math.div($delta-perc, 2);
+
+							#{$i}% {
+								transform: translate($elem-x, $elem-y);
+							}
+						}
+					}
+
+					@for $i from 25 through 50 {
+						@if ($i % $delta-prog == 0) {
+							$elem-x: $elem-x - $delta-perc;
+							$elem-y: $elem-y - math.div($delta-perc, 2);
+
+							#{$i}% {
+								transform: translate($elem-x, $elem-y);
+							}
+						}
+					}
+
+					@for $i from 50 through 75 {
+						@if ($i % $delta-prog == 0) {
+							$elem-x: $elem-x - $delta-perc;
+							$elem-y: $elem-y + math.div($delta-perc, 2);
+
+							#{$i}% {
+								transform: translate($elem-x, $elem-y);
+							}
+						}
+					}
+
+					@for $i from 75 through 100 {
+						@if ($i % $delta-prog == 0) {
+							$elem-x: $elem-x + $delta-perc;
+							$elem-y: $elem-y + math.div($delta-perc, 2);
+
+							#{$i}% {
+								transform: translate($elem-x, $elem-y);
+							}
+						}
+					}
+				}
+
+				a {
+					display: flex;
+					position: relative;
+					margin: 0 auto;
+					border-radius: 50%;
+					width: 150px;
+					height: 150px;
+					padding: 15px;
+					flex-direction: column;
+					justify-content: space-around;
+					border: none;
+					
+
+					img {
+						display: block;
+						position: relative;
+
+						margin: 0 auto;
+										
+						@include adaptive-value('height', 74, 50, 2);
+						@include adaptive-value('height', 50, 37, 1);	
+
+						@include adaptive-value('width', 36, 25, 2);
+						@include adaptive-value('width', 25, 18, 1);
+
+						animation: animation-mouse 2s ease infinite;	
+
+					}
+					p {
+						text-align: center;
+
 					}
 				}
 			}

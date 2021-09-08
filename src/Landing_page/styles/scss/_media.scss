@@ -44,6 +44,8 @@
 }
 
 /** <--------------------------------------------------------------------> **/
+
+// Планшеты и ниже
 @media only screen and (max-width: 1075px) {
 	header .header__slider .slider__ctrl .slider__ctrl_to_slide,
 	header .header__slider .slider__ctrl .slider__slideto_down {
@@ -67,6 +69,7 @@
 	}
 }
 
+// Мобилки
 @media only screen and (max-width: 768px) {
 	nav {
 		#content {

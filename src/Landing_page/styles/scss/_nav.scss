@@ -16,6 +16,7 @@ nav {
 		justify-content: space-between;
 		align-items: center;
 		align-content: center;
+		
 
 		padding: 30px;
 		// @include adaptive-value('padding-top', 20, 10, 1);
@@ -41,11 +42,13 @@ nav {
 			}
 		}
 
-		.nav__burger {
+		button.nav__burger {
+			position: relative;
 			display: block;
 			border: none;
 			height: 40px;
 			width: 40px;
+			z-index: 24;
 
 			div {
 				display: block;
@@ -56,8 +59,6 @@ nav {
 			}
 
 			&.passive {
-				position: relative;
-				z-index: 24;
 
 				div {
 					&:nth-child(1) {
@@ -74,8 +75,6 @@ nav {
 			}
 
 			&.active {
-				position: fixed;
-				z-index: 25;
 
 				div {
 
@@ -99,7 +98,7 @@ nav {
 		position: absolute;
 		height: 100vh;
 		overflow: hidden;
-		z-index: 21;
+		z-index: 23;
 		background-color: #fff;
 		top: 0;
 		right: 0;
@@ -116,6 +115,8 @@ nav {
 
 		#content {
 
+			
+			
 		}
 	}
 }

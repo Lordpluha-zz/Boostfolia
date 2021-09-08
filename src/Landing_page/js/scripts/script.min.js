@@ -3,10 +3,10 @@ jQuery(document).ready(function($) {
 	console.clear();
 
 	// Content upploading effect
-	const AnimItems = $('._anim-elem');
+	var AnimItems = $('._anim-elem');
 
 	function offset(el) {
-		const rect = el.getBoundingClientRect(),
+		var rect = el.getBoundingClientRect(),
 			scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
 			scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 		return { top: rect.top + scrollTop, left: rect.left + scrollLeft};
@@ -14,10 +14,10 @@ jQuery(document).ready(function($) {
 
 	function animOnScroll () {
 		for (let index = 0; index < AnimItems.length; index++) {
-			const AnimItem = AnimItems[index];
-			const AnimItemHeight = AnimItem.offsetHeight;
-			const AnimItemOffset = offset(AnimItem).top;
-			const animStart = 4;
+			var AnimItem = AnimItems[index];
+			var AnimItemHeight = AnimItem.offsetHeight;
+			var AnimItemOffset = offset(AnimItem).top;
+			var animStart = 4;
 
 			let animItemPoint = window.innerHeight - AnimItemHeight / animStart;
 			if (AnimItemHeight > window.innerHeight) {
@@ -35,16 +35,24 @@ jQuery(document).ready(function($) {
 	setTimeout(animOnScroll, 300);
 
 	// Navigation
-	$('nav #content .nav__burger.passive').click(function(event) {
-		$('nav, nav #content .nav__burger, nav .nav__burger-nav').removeClass('passive');
-		$('nav, nav #content .nav__burger, nav .nav__burger-nav').addClass('active');
+	$('nav #content button.nav__burger').click(function(event) {
+
+		if (event.object.hasClass('active')) {
+			event.object.removeClass('active');
+			event.object.addClass('passive');
+		} else {
+			event.object.removeClass('passive');
+			event.object.addClass('active');
+		}
+
+		// $('nav #content button.nav__burger, nav .nav__burger-nav').removeClass('passive');
+		// $('nav #content button.nav__burger, nav .nav__burger-nav').addClass('active');
 	});
 
-	$('nav #content .nav__burger.active').click(function(event) {
-		$('nav, nav #content .nav__burger, nav .nav__burger-nav').removeClass('active');
-		$('nav, nav #content .nav__burger, nav .nav__burger-nav').addClass('passive');
-	});
-	
+	// $('nav #content button.nav__burger.active').click(function(event) {
+	// 	$('nav #content button.nav__burger, nav .nav__burger-nav').removeClass('active');
+	// 	$('nav #content button.nav__burger, nav .nav__burger-nav').addClass('passive');
+	// });
 
 
 	// Header slider
