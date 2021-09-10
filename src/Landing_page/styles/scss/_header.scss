@@ -168,8 +168,13 @@ header {
 					position: relative;
 					margin: 0 auto;
 					border-radius: 50%;
-					width: 150px;
-					height: 150px;
+
+					@include adaptive-value('height', 150, 75, 2);
+					@include adaptive-value('height', 75, 50, 1);	
+
+					@include adaptive-value('width', 150, 75, 2);
+					@include adaptive-value('width', 75, 50, 1);
+
 					padding: 15px;
 					flex-direction: column;
 					justify-content: space-around;
@@ -193,7 +198,9 @@ header {
 					}
 					p {
 						text-align: center;
-
+						
+						@include adaptive-value('font-size', 36, 15, 2);
+						@include adaptive-value('font-size', 15, 10, 1);
 					}
 				}
 			}
