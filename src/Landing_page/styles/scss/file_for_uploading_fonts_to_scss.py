@@ -31,6 +31,17 @@ with open(file_scss, 'w') as w_f:
                 w_f.write(text_for_print)
                 w_f.write('}')
                 print('Сохранение .ttf шрифта завершено')
+            elif file_split[1] == '.woff':
+                print('Выделение расширения шрифта закончено!')
+                w_f.write('@font-face {')
+                text_for_print = ('   font-family: \' {0}\';').format(file_split[0])
+                w_f.write(text_for_print)
+                w_f.write(str('   font-style: normal;'))
+                w_f.write(str('   font-weight: normal;'))
+                text_for_print = ('   src: url({0}.woff) format(\'woff\');').format(file_split[0])
+                w_f.write(text_for_print)
+                w_f.write('}')
+                print('Сохранение .woff шрифта завершено')
             else:
                 continue
 with open(file_scss, 'r') as w_f:

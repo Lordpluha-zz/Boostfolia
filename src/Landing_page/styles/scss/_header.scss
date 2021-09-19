@@ -56,12 +56,21 @@ header {
 							@include adaptive-value('font-size', 30, 25, 1);
 							// font-size: 72px;
 							color: black;
+							font-family: 'BigNoodleTitling', Arial, sans-serif;
+							
+							letter-spacing: 10px;
+							word-spacing: 0px;
 						}
 
 						h6 {
+							margin-top: 15px;
 							@include adaptive-value('font-size', 36, 20, 2);
 							@include adaptive-value('font-size', 20, 15, 1);
 							// font-size: 36px;
+							font-family: 'BigNoodleTitling', Arial, sans-serif;
+							
+							letter-spacing: 5px;
+							word-spacing: 0px;
 						}
 					}
 					
@@ -199,8 +208,12 @@ header {
 					p {
 						text-align: center;
 						
-						@include adaptive-value('font-size', 36, 15, 2);
-						@include adaptive-value('font-size', 15, 10, 1);
+						@include adaptive-value('font-size', 15, 10, 2);
+						@include adaptive-value('font-size', 10, 5, 1);
+
+						font-family: 'Roboto', sans-serif;
+						font-weight: bold;
+						text-transform: uppercase;
 					}
 				}
 			}
