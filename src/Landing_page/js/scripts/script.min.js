@@ -13,13 +13,13 @@ jQuery(document).ready(function($) {
 	}
 
 	function animOnScroll () {
-		for (let index = 0; index < AnimItems.length; index++) {
+		for (var index = 0; index < AnimItems.length; index++) {
 			var AnimItem = AnimItems[index];
 			var AnimItemHeight = AnimItem.offsetHeight;
 			var AnimItemOffset = offset(AnimItem).top;
 			var animStart = 4;
 
-			let animItemPoint = window.innerHeight - AnimItemHeight / animStart;
+			var animItemPoint = window.innerHeight - AnimItemHeight / animStart;
 			if (AnimItemHeight > window.innerHeight) {
 				animItemPoint = window.innerHeight - window.innerHeight / animStart;
 			}
@@ -99,8 +99,8 @@ jQuery(document).ready(function($) {
 	    	});
 	  	}
 	};
-	// Article__out_works slider
-	for (let i = 1; i <= $(`article section.our_works #content .our_works__nav button`).length; i++) {
+	// Article__our_works slider
+	for (var i = 1; i <= $('article section.our_works #content .our_works__nav button').length; i++) {
 		$(`article section.our_works #content .our_works__nav .l${i}`).click(
 			function(event) {
 				$('article section.our_works #content .our_works__nav button.active').removeClass('active');
@@ -144,4 +144,23 @@ jQuery(document).ready(function($) {
 			setML2(mrg2);
 		}
 	});
+
+
+
+	// Article.Members
+
+	var slides = $('article .who_we_are #content .members_and_skills .members_and_skills__skills .skills__slider_tape').children('skills__member_skills');
+	console.log('Привет');
+	console.log(slides);
+
+	// for (var a = 1; a <= slides.lenght; a++) {
+	// 	var skills_bar_legends = $(`article .who_we_are #content .members_and_skills .members_and_skills__skills .skills__slider_tape .skills__member_skills:nth-child(${a}) .member_skills__skills_bar`).children(`.legend`);
+		
+	// 	for (var b = 1; b <= skills_bar_legends.lenght; b++) {
+	// 		var value = $(`article .who_we_are #content .members_and_skills .members_and_skills__skills .skills__slider_tape .skills__member_skills:nth-child(${a}) .member_skills__skills_bar`).children(`progress.progress.str${b}`).value;
+			
+	// 		$(`article .who_we_are #content .members_and_skills .members_and_skills__skills .skills__slider_tape .skills__member_skills:nth-child(${a}) .member_skills__skills_bar`).children(`p.skills_bar__perc_value.str${b}`).text(value+'%');
+	// 	}
+		
+	// }
 });

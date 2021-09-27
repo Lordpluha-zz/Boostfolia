@@ -907,9 +907,9 @@ async function scripts(event) {
 		gulp.src([`./${source_dir}/${start_page}/${javascript_dir_name}/${item1}/*.js`,
 				  `!./${source_dir}/${start_page}/${javascript_dir_name}/${item1}/*.min.js`])
 
-			// Beautifying
-			.pipe( eslint() )
-			.pipe(eslint.format())
+			// Linting
+			// .pipe( eslint() )
+			// .pipe(eslint.format())
 
 			// Compressing
 			// .pipe( uglify() )

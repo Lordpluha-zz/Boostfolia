@@ -167,8 +167,10 @@ article {
 			h1 {
 				max-width: 100%;
 				color: #fff;
+				@include adaptive-value('font-size', 50, 30, 2);
 				@include adaptive-value('font-size', 30, 25, 1);
-				@include adaptive-value('font-size', 60, 30, 2);
+				font-family: 'Roboto', Arial, sans-serif;
+				font-weight: bold;
 			}
 
 			p {
@@ -177,9 +179,11 @@ article {
 				@include adaptive-value('margin-top', 40, 25, 2);
 
 				color: #535556;
-
-				@include adaptive-value('font-size', 14, 10, 1);
-				@include adaptive-value('font-size', 30, 14, 2);
+				@include adaptive-value('font-size', 7, 10, 1);
+				@include adaptive-value('font-size', 10, 15, 2);
+				font-family: 'Roboto', Arial, sans-serif;
+				font-weight: Thin;
+				line-height: 135%;
 			}
 
 			a {
@@ -209,8 +213,6 @@ article {
 
 				@include adaptive-value('font-size', 14, 10, 1);
 				@include adaptive-value('font-size', 40, 14, 2);
-				
-				
 			}
 		}
 	}
@@ -242,6 +244,12 @@ article {
 			p {
 				max-width: 80%;
 				margin: 40px auto 0;
+
+				font-family: 'Roboto', Arial, sans-serif;
+				font-weight: Thin;
+
+				@include adaptive-value('font-size', 10, 15, 1);
+				@include adaptive-value('font-size', 15, 20, 2);
 			}
 
 			.our_works__nav {
@@ -378,18 +386,21 @@ article {
 			display: block;
 			position: relative;
 			width: 100%;
+			height: 100%;
 			overflow: hidden;
 
 			.slider__tape {
-				display: block;
-				position: relative;
-				width: 300%;
-				height: 100%;
 				display: flex;
 				justify-content: space-around;
+				position: relative;
+
+				width: 300%;
+				height: 100%;
+				
 				transition: all .5s ease-in-out .05s;
 
 				.slide {
+					display: block;
 					position: relative;
 					width: 33.333%;
 					height: 100%;
@@ -398,26 +409,31 @@ article {
 						display: flex;
 						justify-content: space-around;
 						height: 100%;
-						padding: 0 90px;
 
+						@include adaptive-value('padding-top', 40, 0, 1);
+						@include adaptive-value('padding-top', 80, 40, 2);
 
-						@include adaptive-value('padding-top', 10, 70, 1);
-						@include adaptive-value('padding-top', 70, 100, 2);
+						@include adaptive-value('padding-bottom', 40, 0, 1);
+						@include adaptive-value('padding-bottom', 80, 40, 2);
+						
+						@include adaptive-value('padding-left', 90, 40, 1);
+						@include adaptive-value('padding-left', 120, 90, 2);
 
-						@include adaptive-value('padding-bottom', 10, 80, 1);
-						@include adaptive-value('padding-bottom', 80, 90, 2);
+						@include adaptive-value('padding-right', 90, 40, 1);
+						@include adaptive-value('padding-right', 120, 90, 2);
+
+						align-self: center;
+						align-items: center;
 
 					}
 					a {
-						display: flex;
-						width: 20%;
+						display: block;
 						border: none;
-						align-self: center;
-						align-content: center;
 
 						img {
-							width: 100%;
-							margin: 0 auto;
+							display: block;
+							height: 100%;
+							max-width: 100%;
 						}	
 					}
 					
@@ -440,7 +456,7 @@ article {
 
 					button {
 						height: 100%;
-						padding: 0 45px;
+						padding: 0 15px;
 						border: none;
 
 						img {
@@ -472,8 +488,8 @@ article {
 
 					text-align: center;
 					font-family: 'BigNoodleTitling', Arial, sans-serif;
-					@include adaptive-value( 'font-size', 24, 48, 1);
-					@include adaptive-value( 'font-size', 48, 56, 2);
+					@include adaptive-value('font-size', 24, 48, 1);
+					@include adaptive-value('font-size', 48, 56, 2);
 					text-transform: uppercase;
 					color: #3d3d3d;
 				
@@ -491,8 +507,8 @@ article {
 				}
 
 				p.who_we_are__header-subtitle {
-					@include adaptive-value( 'margin-top', 20, 25, 1);
-					@include adaptive-value( 'margin-top', 25, 40, 2);
+					@include adaptive-value('margin-top', 20, 25, 1);
+					@include adaptive-value('margin-top', 25, 40, 2);
 
 					text-align: center;
 				}
@@ -500,14 +516,19 @@ article {
 
 			.members_and_skills {
 				display: flex;
-				justify-content: space-between;
+				justify-content: space-around;
+				position: relative;
 				margin-top: 85px;
+				width: 100%;
 
 				.members_and_skills__members {
+					display: block;
+					position: relative;
 					background-color: #ebebeb;
 					margin-right: 10px;
 					overflow: hidden;
 					min-width: 150px;
+					width: 33.333%;
 
 					.members__slider_tape {
 						display: flex;
@@ -521,7 +542,7 @@ article {
 							width: 33.333%;
 							height: 100%;
 
-							padding: 10px;
+							padding: 70px 90px;
 
 							img.member__avatar {
 								display: block;
@@ -536,17 +557,27 @@ article {
 
 							h3.member__Name-Surname {
 								text-align: center;
+								margin-top: 30px;
 							}
 
 							p.member__style_job {
 								text-align: center;
+								margin-top: 8px;
 							}
 
 							.member__contacts {
-								margin: 0 auto;
-								a {
-									img {
+								display: flex;
+								justify-content: space-around;
+								max-width: 50%;
+								
+								margin: 20px auto 0;
 
+								a {
+									border: none;
+
+									img {
+										max-height: 100%;
+										width: 100%;
 									}
 								}
 							}
@@ -554,8 +585,37 @@ article {
 					}
 
 					.slider__controller {
-						.ctrl_dot {
+						top: 0;
+						left: 0;
+						position: absolute;
+						height: 100%;
+						width: 100%;
 
+						.container {
+							display: block;
+							position: absolute;
+							bottom: 40px;
+							width: 100%;
+
+							.content {
+								display: flex;
+								justify-content: space-around;
+								max-width: 20%;
+								margin: 0 auto;
+
+								.ctrl_dot {
+									bottom: 0;
+									border-radius: 50%;
+									background-color: #fff;
+									height: 10px;
+									width: 10px;
+
+									&:hover {
+										background-color: #8e8181;
+										cursor: pointer;
+									}
+								}
+							}
 						}
 					}
 				}
@@ -564,6 +624,7 @@ article {
 					background-color: #ebebeb;
 					margin-left: 10px;
 					overflow: hidden;
+					width: 66.666%;
 
 					.skills__slider_tape {
 						display: flex;
@@ -575,19 +636,22 @@ article {
 						.skills__member_skills {
 							width: 33.333%;
 							height: 100%;
+							padding: 120px 65px 0;
 
 							h3.member_skills__title {
 
 							}
 
 							p.about_me {
-
+								margin-top: 26px;
 							}
 
 							.member_skills__skills_bar {
 								display: grid;
-								grid-template-columns: 1fr, 4fr 0.333fr;
+								grid-template-columns: 7fr 20fr 1fr;
 								grid-template-rows: repeat(1fr, 4);
+								margin-top: 45px;
+								grid-gap: 10px;
 
 								@for $i from 1 through 4 {
 									.str#{$i} {
@@ -611,24 +675,21 @@ article {
 								}
 
 								progress.progress {
-									width: 90%;
+									width: 100%;
 									height: 2px;
-									background-color: #fff;
+									
 
-									&[value]::-webkit-progress-value {
-
-										
-
+									&[value] {
 										/* Reset the default appearance */
 									    -webkit-appearance: none;
 									    appearance: none;
+									}
+									&[value]::-webkit-progress-bar {
+										background-color: #fff;
+									}
 
-										background-color: #f4511e;
-										background-image: -webkit-linear-gradient(to left,
-																			rgba(0, 0, 0, .25) 50%,
-																			rgba(255, 255, 255, .25) 50%
-	                           											   );
-										background-size: 100% 100%;
+									&[value]::-webkit-progress-value {
+										background-color: #e84c3d;
 									}
 								}
 							}
